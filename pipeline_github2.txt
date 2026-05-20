@@ -3,39 +3,43 @@ ARQUIVO\github
 
 Execute as seguintes etapas em sequência:
 
-ETAPA 1 — Substituir caminhos absolutos nos scripts
-Em todos os arquivos .ipynb e .m dentro de scripts\,
-substitua os caminhos absolutos por caminhos relativos.
+ETAPA 1 — Corrigir escape characters nos cabeçalhos dos notebooks
+Em todos os .ipynb em scripts\, na célula markdown de cabeçalho,
+corrija os escape characters que estão quebrando a renderização:
 
-Exemplos do padrão a substituir:
-r'C:\Users\lucas\OneDrive\Documentos\Documents\1.DOUTORADO\SESI_01\PROC_DATA\PROC_DATA_NOVO_PROCESSADO\REORGANIZADO\subjstats_individuais.xlsx'
-r'C:\Users\lucas\OneDrive\Documentos\Documents\1.DOUTORADO\SESI_01\PROC_DATA\aceletra_g_acelerado\sessao_stats.xlsx'
+Substitua as ocorrências problemáticas:
+- "\\beta" ou "\beta" → use o símbolo unicode β diretamente
+- "\\n" solto no meio de texto → remova, deixe como quebra de linha 
+  normal no JSON do notebook
+- Qualquer outro caractere de escape mal formatado no source 
+  da célula markdown
 
-Substitua todos os caminhos absolutos (qualquer string começando com
-r'C:\Users\lucas\...' ou 'C:\\Users\\lucas\\...') por caminhos relativos
-no formato:
-../data/nome_do_arquivo.xlsx
+O cabeçalho deve renderizar corretamente no Jupyter como:
+# β_activation_lmm.ipynb
 
-Crie também um comentário acima de cada PATH explicando:
-# Update this path to match your local data directory
+**Purpose:** ...
+**Inputs:** ...
+**Outputs:** ...
 
-ETAPA 2 — Converter manuscritos de DOCX para PDF
-Para cada arquivo .docx em manuscript\, converta para PDF usando:
-python -c "import subprocess; subprocess.run(['soffice', '--headless', '--convert-to', 'pdf', '--outdir', 'manuscript', 'manuscript/<arquivo>.docx'])"
+Verifique todos os notebooks e corrija o mesmo padrão em cada um.
 
-Ou se LibreOffice estiver disponível via linha de comando:
-soffice --headless --convert-to pdf --outdir manuscript\ manuscript\*.docx
+ETAPA 2 — Limpar pasta manuscript
+Delete todos os arquivos .docx dentro de manuscript\
+Mantenha apenas arquivos .pdf
 
-Mantenha os .docx originais e adicione os .pdf gerados.
+ETAPA 3 — Converter manuscript_final_2.docx para PDF
+O arquivo está em:
+ARQUIVO\METODO\manuscript_final_2.docx
 
-ETAPA 3 — Atualizar .gitignore
-Adicione ao .gitignore:
-- data\ (pasta de dados locais, não sobe para o GitHub)
+Converta para PDF:
+soffice --headless --convert-to pdf --outdir github\manuscript\ "ARQUIVO\METODO\manuscript_final_2.docx"
 
-ETAPA 4 — Commit das mudanças
+Salve o PDF em github\manuscript\manuscript_final_2.pdf
+
+ETAPA 4 — Commit
 git add .
-git commit -m "fix: replace absolute paths with relative paths in all scripts"
-git commit -m "docs: add PDF versions of manuscript sections"
+git commit -m "fix: correct escape characters in notebook headers"
+git commit -m "docs: replace docx with PDF in manuscript folder"
 git push
 
 Confirme cada etapa antes de avançar.
