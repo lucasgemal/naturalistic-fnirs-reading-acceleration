@@ -2,8 +2,8 @@
 
 **Status:** Manuscript in preparation
 
-**Authors:** Lucas C. Gemal, Bruno Melo, Raimundo Soares Jr, João R. Sato, Roberto Lent  
-**Affiliations:** IDOR / UFRJ / UFABC  
+**Authors:** Lucas Gemal  
+**Affiliations:** IDOR / UFRJ
 **Contact:** lucasgemal@gmail.com
 
 ---
@@ -148,7 +148,7 @@ pip install pandas numpy statsmodels scipy matplotlib openpyxl pingouin
 
 ## Citation
 
-> Gemal LC, Melo B, Soares Jr R, Sato JR, Lent R (in preparation).
+> Gemal L,(in preparation).
 > *Neurobiological Foundations of Reading Acceleration: A Naturalistic fNIRS Brain Imaging Study.*
 
 ---
