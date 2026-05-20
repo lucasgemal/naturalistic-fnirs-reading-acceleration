@@ -19,8 +19,6 @@ with portable fNIRS recorded in a naturalistic classroom setting.
 1. ACELETRA® training accelerates the automatization of neural reading mechanisms (reduced HbO over sessions = neural efficiency gain).
 2. Training increases functional connectivity between left temporal and left frontal cortex.
 
-**Sample:** 14 children (n=7 accelerated, n=7 non-accelerated control), selected from 39 recruited
-based on IQ (WASI ≥ 85) and reading/writing performance (TDE).
 
 ---
 
