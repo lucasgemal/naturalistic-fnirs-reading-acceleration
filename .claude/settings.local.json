@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\lucas\\\\OneDrive\\\\Documentos\\\\Documents\\\\1.DOUTORADO\\\\SESI_01\\\\RESULTADOS\\\\METODO\" -File | Where-Object { $_.Extension -eq \".docx\" } | Select-Object Name | Format-Table -AutoSize)",
+      "PowerShell(jupyter nbconvert *)"
+    ]
+  }
+}
