@@ -1,0 +1,41 @@
+Estou em:
+ARQUIVO\github
+
+Execute as seguintes etapas em sequência:
+
+ETAPA 1 — Substituir caminhos absolutos nos scripts
+Em todos os arquivos .ipynb e .m dentro de scripts\,
+substitua os caminhos absolutos por caminhos relativos.
+
+Exemplos do padrão a substituir:
+r'C:\Users\lucas\OneDrive\Documentos\Documents\1.DOUTORADO\SESI_01\PROC_DATA\PROC_DATA_NOVO_PROCESSADO\REORGANIZADO\subjstats_individuais.xlsx'
+r'C:\Users\lucas\OneDrive\Documentos\Documents\1.DOUTORADO\SESI_01\PROC_DATA\aceletra_g_acelerado\sessao_stats.xlsx'
+
+Substitua todos os caminhos absolutos (qualquer string começando com
+r'C:\Users\lucas\...' ou 'C:\\Users\\lucas\\...') por caminhos relativos
+no formato:
+../data/nome_do_arquivo.xlsx
+
+Crie também um comentário acima de cada PATH explicando:
+# Update this path to match your local data directory
+
+ETAPA 2 — Converter manuscritos de DOCX para PDF
+Para cada arquivo .docx em manuscript\, converta para PDF usando:
+python -c "import subprocess; subprocess.run(['soffice', '--headless', '--convert-to', 'pdf', '--outdir', 'manuscript', 'manuscript/<arquivo>.docx'])"
+
+Ou se LibreOffice estiver disponível via linha de comando:
+soffice --headless --convert-to pdf --outdir manuscript\ manuscript\*.docx
+
+Mantenha os .docx originais e adicione os .pdf gerados.
+
+ETAPA 3 — Atualizar .gitignore
+Adicione ao .gitignore:
+- data\ (pasta de dados locais, não sobe para o GitHub)
+
+ETAPA 4 — Commit das mudanças
+git add .
+git commit -m "fix: replace absolute paths with relative paths in all scripts"
+git commit -m "docs: add PDF versions of manuscript sections"
+git push
+
+Confirme cada etapa antes de avançar.
