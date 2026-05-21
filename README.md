@@ -4,7 +4,7 @@
 
 **Authors:** Lucas Gemal  
 **Affiliations:** IDOR / UFRJ
-**Contact:** lucasgemal@gmail.com
+**Contact:** lucas.gemal@idor.org
 
 ---
 
