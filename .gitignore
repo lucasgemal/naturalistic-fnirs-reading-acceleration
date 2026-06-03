@@ -1,0 +1,29 @@
+# Claude Code
+.claude/
+
+# nbstripout
+.nbstripout
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Raw data / large binary formats
+*.mat
+*.snirf
+*.nirs
+*.csv
+*.dat
+
+# Data directories
+input*/
+output*/
+data*/
+data/
+export*/
