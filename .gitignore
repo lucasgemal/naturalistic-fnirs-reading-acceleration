@@ -1,31 +1,43 @@
-# Claude Code
-.claude/
+# ==========================================================
+# Este repositório contém APENAS os scripts de análise.
+# Dados, resultados e manuscrito são intencionalmente
+# excluídos — ver seção "Escopo deste repositório" no README.
+# ==========================================================
 
-# nbstripout
+# Dados e resultados (nunca incluir)
+data/
+results/
+*.xlsx
+*.csv
+*.mat
+*.snirf
+*.nirs
+
+# Manuscrito (nunca incluir)
+manuscript/
+*.docx
+*.pdf
+
+# Figuras (nunca incluir)
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Outputs de notebook
+.ipynb_checkpoints/
 .nbstripout
 
 # Python
 __pycache__/
 *.pyc
-*.pyo
-.ipynb_checkpoints/
 
-# OS
+# Sistema
 .DS_Store
 Thumbs.db
 
-# Raw data / large binary formats
-*.mat
-*.snirf
-*.nirs
-*.csv
-*.dat
+# Configuração local do Claude Code
+.claude/
 
-# Data directories
-input*/
-output*/
-data*/
-data/
-export*/
-manuscript/
-results/
+# Lista local de substituições (contém caminhos locais)
+replacements.txt
